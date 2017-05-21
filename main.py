@@ -1,5 +1,19 @@
+from random import randint
 print("Welcome to Square Meal!")
-for i in range(0, 4):
-    print("A sha")
-    if i % 2 != 0:
-        print(i)
+numBlocksInMouth = 0
+list = 
+def move(blockNum):
+    ......
+def printBoard():
+    .....
+def kill(monsterNum):
+    .........
+def placeMonsters():
+    ..........
+    for i in range (len(list)*3/5):
+        random = randint(0, )
+        
+        
+        
+    
+
