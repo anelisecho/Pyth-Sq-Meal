@@ -11,7 +11,13 @@ arr = [[0 for x in range(0,20)] for x in range(0,20)]
 def move(blockNum):
     #......
 def printBoard():
-    for i in
+    for i in range(10):
+        for j in range in range(10):
+            if arr[i][j] == 0:
+                print(".")
+        print("\n")
+        
+
 def kill(monsterNum):
     #.........
 def placeMonsters():
