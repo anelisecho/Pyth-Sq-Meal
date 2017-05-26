@@ -1,7 +1,7 @@
 # For completed functions (definitions?) let's put a + in a comment after the name
 from random import randint
 
-numBlocksInMouth = 0
+blockCount = 0
 level = 1
 arr = [[0 for x in range(0,20)] for x in range(0,20)]
 arrSize = len(arr) * len(arr[0])
@@ -22,6 +22,7 @@ def printBoard(arr): #+
                 print(" : ", end='')
         print("|")
     print("——————————————————————————————————————————————————————————————")
+    print("Block count: " + blockCount)
 
 # Will randomly fill the board with blocks
 # I can't get this to work?
@@ -37,7 +38,7 @@ def move(blockNum):
             
 
 def kill(monsterX, monsterY): # takes row and column of monster to be killed
-    if numBlocksInMouth >= 4:
+    if blockCount >= 4:
         arr[monsterX][monsterY] = 0
         
     for i in range (len(list)*3/5):
