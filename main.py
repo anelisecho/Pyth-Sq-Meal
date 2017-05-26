@@ -25,7 +25,7 @@ def printBoard(arr): #+
 
 # Will randomly fill the board with blocks
 # I can't get this to work?
-def randBlocks(arr):
+def placeMonsters(arr):
     import random
     for i in range(300):
         e = random.randint(0, 19) 
@@ -40,8 +40,6 @@ def kill(monsterX, monsterY): # takes row and column of monster to be killed
     if numBlocksInMouth >= 4:
         arr[monsterX][monsterY] = 0
         
-def placeMonsters():
-    #..........
     for i in range (len(list)*3/5):
         random = randint(0, )
 def getUserInput():
