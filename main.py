@@ -6,6 +6,7 @@ arr = [[0 for x in range(0,20)] for x in range(0,20)]
 arrSize = len(arr) * len(arr[0])
 arr[20][0] = 1 
 currentPos = [20, 0]
+score = 0
 #Aesha I got the printboard to work
 def printBoard(arr): #+
     print("______________________________________________________________")
@@ -65,7 +66,17 @@ def main()
         initial = arr[row][col]
         move(row, col)
         if initial == 2:
-            blockCount++
+            blockCount = blockCount + 1
+        if blockCount >= 4:
+            print "Which monster would you like to kill- row?"
+            row = raw_input()
+            print "Which monster would you like to kill- column?"
+            col = raw_input()
+            if arr[row][col] == 3:
+                blockCount = 0
+                arr[row][col] = 1
+                score = score + 50
+                
          
         
     
