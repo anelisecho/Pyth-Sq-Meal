@@ -5,7 +5,7 @@ blockCount = 0
 level = 1
 arr = [[0 for x in range(0,20)] for x in range(0,20)]
 arrSize = len(arr) * len(arr[0])
-arr[20][0] = 2 #2 to denote pos of character
+arr[20][0] = 1 
 currentPos = [20, 0]
 #Aesha I got the printboard to work
 def printBoard(arr): #+
@@ -27,17 +27,25 @@ def printBoard(arr): #+
 
 # Will randomly fill the board with blocks
 # I can't get this to work?
-def placeMonsters(arr):
+def placeBlocks(arr):
     import random
     for i in range(300):
         e = random.randint(0, 19) 
         c = random.randint(0, 19) 
         if arr[e][c] == 0:
-            arr[e][c] = 1
+            arr[e][c] = 2
+ def placeMOnsters(arr):
+    import random
+    for i in range(100):
+        e = random.randint(0, 19) 
+        c = random.randint(0, 19) 
+        if arr[e][c] == 0:
+            arr[e][c] = 3           
     
 def move(row, col):
     arr[currentPos[0], currentPos[1]] = 0
-    arr[row][col] = 2
+    arr[row][col] = 1
+    if arr[row][col] ==  
     
 def kill(monsterX, monsterY): # takes row and column of monster to be killed
     if blockCount >= 4:
@@ -55,5 +63,7 @@ def main()
         row = raw_input()
         print "What column do you want to move to?"
         col = raw_input()
+        move(row, col)
+        
     
 
