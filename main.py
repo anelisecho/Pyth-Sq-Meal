@@ -31,10 +31,10 @@ def randBlocks(arr):
         e = random.randint(0, 19) 
         c = random.randint(0, 19) 
         if arr[e][c] == 0:
-            arr[e][c] = 1
+            arr[e][c] == 1
     
 def move(blockNum):
-           
+            
 
 def kill(monsterNum):
     #.........
@@ -42,6 +42,15 @@ def placeMonsters():
     #..........
     for i in range (len(list)*3/5):
         random = randint(0, )
+def getUserInput():
+    print "Where would you like to move?",
+    response = raw_input()
+    if response == down
+    
+    if response == right
+    
+    if response == left
+    
         
     
 
