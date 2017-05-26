@@ -1,6 +1,5 @@
 # For completed functions (definitions?) let's put a + in a comment after the name
 from random import randint
-
 blockCount = 0
 level = 1
 arr = [[0 for x in range(0,20)] for x in range(0,20)]
@@ -63,7 +62,11 @@ def main()
         row = raw_input()
         print "What column do you want to move to?"
         col = raw_input()
+        initial = arr[row][col]
         move(row, col)
+        if initial == 2:
+            blockCount++
+         
         
     
 
