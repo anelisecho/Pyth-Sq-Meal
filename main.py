@@ -42,16 +42,16 @@ def move(row, col):
 def kill(monsterX, monsterY): # takes row and column of monster to be killed
     if blockCount >= 4:
         arr[monsterX][monsterY] = 0
-        
-def getUserInput():
-    print "Where would you like to move?",
-    response = raw_input()
-    if response == 'down'
     
-    if response == 'right'
-    
-    if response == 'left'
-    
-        
+if __name__ == '__main__': #main method stuff
+   main()
+
+def main() 
+    gameOn = true
+    while(gameOn) :
+        placeMonsters()
+        printBoard()
+        print "Where would you like to move?",
+        response = raw_input()
     
 
