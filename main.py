@@ -81,3 +81,128 @@ def main()
         
     
 
+# Hey guys I went home bc I'm sick, but here's what I got done this morning.  It eats blocks up to 4 at a time, but will crash if you try to eat blocks on the edges.
+# Movements are through wasd, with e to eat blocks.  I was working on adding monsters, I'll continue on that if I can later
+
+# List contains the numbers 0-3                                                 
+# 0 == ".", an empty space
+# 1 == "#", the block
+# 2 == "@", the character
+# 3 == ":", the monster
+ 
+import random
+ 
+print("Welcome to Square Python Meal!")
+ 
+numBlocksInMouth = 0
+playerPos = [0, 0]
+monsterPos = [0, 0]
+ 
+arr = [[0 for x in range(0,20)] for x in range(0,20)]   
+arrSize = len(arr) * len(arr[0])
+
+def printBoard(arr):
+    print("___________________________________________")
+    for i in range(20):
+        print("|", end='')
+        for j in range(20):
+            if arr[i][j] == 0: 
+                print(" .", end='')
+            elif arr[i][j] == 1:
+                print(" #", end='')
+            elif arr[i][j] == 2:
+                print(" @", end='')
+            elif arr[i][j] == 3:
+                print(" &", end='')
+        print(" |")
+    print("———————————————————————————————————————————")
+    
+def randBlocks(arr):
+    for i in range(242):
+        e = random.randint(0, 19)
+        c = random.randint(0, 19)
+        if arr[e][c] == 0:
+            arr[e][c] = 1
+    
+def placePlayer():
+    e = random.randint(0, 19)
+    c = random.randint(0, 19)
+    while arr[e][c] != 0:
+        e = random.randint(0, 19)
+        c = random.randint(0, 19)
+    arr[e][c] = 2
+    playerPos[0] = e
+    playerPos[1] = c
+
+def placeMonster():
+    e = random.randint(0, 19) 
+    c = random.randint(0, 19) 
+    while arr[e][c] != 0:
+        e = random.randint(0, 19) 
+        c = random.randint(0, 19) 
+    arr[e][c] = 3 
+    monsterPos[0] = e 
+    monsterPos[1] = c 
+    
+def moveUp():
+    if arr[playerPos[0] - 1][playerPos[1]] == 0:
+        arr[playerPos[0] - 1][playerPos[1]] = 2
+        arr[playerPos[0]][playerPos[1]] = 0
+        playerPos[0] -= 1
+    
+def moveDown():
+    if arr[playerPos[0] + 1][playerPos[1]] == 0:
+        arr[playerPos[0] + 1][playerPos[1]] = 2
+        arr[playerPos[0]][playerPos[1]] = 0
+        playerPos[0] += 1 
+        
+def moveLeft():
+    if arr[playerPos[0]][playerPos[1] - 1] == 0:
+        arr[playerPos[0]][playerPos[1] - 1] = 2 
+        arr[playerPos[0]][playerPos[1]] = 0 
+        playerPos[1] -= 1
+    
+def moveRight():
+    if arr[playerPos[0]][playerPos[1] + 1] == 0:
+        arr[playerPos[0]][playerPos[1] + 1] = 2
+        arr[playerPos[0]][playerPos[1]] = 0
+        playerPos[1] += 1
+
+def pickUpBlocks():
+    global numBlocksInMouth
+    if arr[playerPos[0]+1][playerPos[1]] == 1:
+        arr[playerPos[0]+1][playerPos[1]] = 0
+        numBlocksInMouth += 1
+    if arr[playerPos[0]][playerPos[1]+1] == 1:
+        arr[playerPos[0]][playerPos[1]+1] = 0
+        numBlocksInMouth += 1
+    if arr[playerPos[0]-1][playerPos[1]] == 1:
+        arr[playerPos[0]-1][playerPos[1]] = 0
+        numBlocksInMouth += 1
+    if arr[playerPos[0]][playerPos[1]-1] == 1:
+        arr[playerPos[0]][playerPos[1]-1] = 0
+        numBlocksInMouth += 1
+        
+randBlocks(arr)
+placePlayer()
+placeMonster()
+printBoard(arr)
+print(playerPos)
+print(monsterPos)
+print("Blocks in mouth: " + str(numBlocksInMouth))
+move = 'f'
+while move != 'q':
+    move = input("Move [w, a, s, d, or q (quit)]? ")
+    if move == 'w':
+        moveUp()
+    if move == 'a':
+        moveLeft()
+    if move == 's':
+        moveDown()
+    if move == 'd':
+        moveRight()
+    if move == 'e':
+        pickUpBlocks()
+    printBoard(arr)
+    print(playerPos)
+    print("Blocks in mouth: " + str(numBlocksInMouth))
