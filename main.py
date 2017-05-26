@@ -5,7 +5,7 @@ numBlocksInMouth = 0
 level = 1
 arr = [[0 for x in range(0,20)] for x in range(0,20)]
 arrSize = len(arr) * len(arr[0])
-
+arr[20][0] = 2 #2 to denote pos of character
 #Aesha I got the printboard to work
 def printBoard(arr): #+
     print("______________________________________________________________")
@@ -31,13 +31,15 @@ def randBlocks(arr):
         e = random.randint(0, 19) 
         c = random.randint(0, 19) 
         if arr[e][c] == 0:
-            arr[e][c] == 1
+            arr[e][c] = 1
     
 def move(blockNum):
             
 
-def kill(monsterNum):
-    #.........
+def kill(monsterX, monsterY): # takes row and column of monster to be killed
+    if numBlocksInMouth >= 4:
+        arr[monsterX][monsterY] = 0
+        
 def placeMonsters():
     #..........
     for i in range (len(list)*3/5):
