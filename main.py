@@ -51,7 +51,9 @@ def main()
     while(gameOn) :
         placeMonsters()
         printBoard()
-        print "Where would you like to move?",
-        response = raw_input()
+        print "Where row do you want to move to?"
+        row = raw_input()
+        print "What column do you want to move to?"
+        col = raw_input()
     
 
