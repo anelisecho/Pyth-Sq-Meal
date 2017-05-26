@@ -45,11 +45,11 @@ def placeMonsters():
 def getUserInput():
     print "Where would you like to move?",
     response = raw_input()
-    if response == "down"
+    if response == 'down'
     
-    if response == "right"
+    if response == 'right'
     
-    if response == "left"
+    if response == 'left'
     
         
     
