@@ -6,6 +6,7 @@ level = 1
 arr = [[0 for x in range(0,20)] for x in range(0,20)]
 arrSize = len(arr) * len(arr[0])
 arr[20][0] = 2 #2 to denote pos of character
+currentPos = [20, 0]
 #Aesha I got the printboard to work
 def printBoard(arr): #+
     print("______________________________________________________________")
@@ -34,15 +35,14 @@ def placeMonsters(arr):
         if arr[e][c] == 0:
             arr[e][c] = 1
     
-def move(blockNum):
-            
-
+def move(row, col):
+    arr[currentPos[0], currentPos[1]] = 0
+    arr[row][col] = 2
+    
 def kill(monsterX, monsterY): # takes row and column of monster to be killed
     if blockCount >= 4:
         arr[monsterX][monsterY] = 0
         
-    for i in range (len(list)*3/5):
-        random = randint(0, )
 def getUserInput():
     print "Where would you like to move?",
     response = raw_input()
