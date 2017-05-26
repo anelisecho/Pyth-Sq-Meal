@@ -31,10 +31,10 @@ def randBlocks(arr):
         e = random.randint(0, 19) 
         c = random.randint(0, 19) 
         if arr[e][c] == 0:
-            arr[e][c] == 1
+            arr[e][c] = 1
     
 def move(blockNum):
-    #......        
+           
 
 def kill(monsterNum):
     #.........
