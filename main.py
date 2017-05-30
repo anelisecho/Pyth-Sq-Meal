@@ -206,3 +206,12 @@ while move != 'q':
     printBoard(arr)
     print(playerPos)
     print("Blocks in mouth: " + str(numBlocksInMouth))
+
+#TODO
+# First off: the player picks up anything from the 4 spaces up,down,right,left of it when you press e, so it can collect up to 4 blocks at once
+# 1. When the player picks up blocks while on the edge or moves into the edge there is an error bc of arrays and whatnot, pls add a crapload of if statements so that when playerPos is on the edges the behavior is modified (ex: player on top corner trying to go up cannot do so, and trying to pick up blocks there can only get blocks from down, left)
+# 2. Pls make a release where they spit out blocks, but pay attention to the edges of the board so if they're on the side they can only spit out 3 (again, probs lotsa if statements) Spit out blocks will just go as far down up,right,left,down as it can before hitting another block (this part'll be tricky)
+# 3. Monster doesn't move yet.  Have it look for a direction to move in (up down right left) and begin doing so, moving one block at a time when the player moves.  When it hits a block it either looks for a new direction or moves back the way it came (random choice)
+# 4. When monster is in the same row as player releasing blocks, it dies (maybe change its symbol to an x for a couple turns before disappearing)
+# 5. (Optional) If anyone feels like figuring out how to do a gui we could make it look cooler :D
+# Thanks and I'll be back in an hour!
